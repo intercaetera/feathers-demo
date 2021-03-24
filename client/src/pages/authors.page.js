@@ -71,6 +71,7 @@ export default function AuthorsPage() {
                 boxSize={16}
                 objectFit="contain"
                 src={author.pictureLink}
+                fallbackSrc="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-26.jpg"
                 m="auto"
               />
               <Text>{author.name}</Text>

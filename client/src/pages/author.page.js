@@ -26,7 +26,12 @@ export default function AuthorPage() {
       <Link to="/authors">{"<-"} Back</Link>
       {author && (
         <VStack spacing={4}>
-          <Image boxSize={32} objectFit="contain" src={author.pictureLink} />
+          <Image
+            boxSize={32}
+            objectFit="contain"
+            src={author.pictureLink}
+            fallbackSrc="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-26.jpg"
+          />
           <Heading size="md">{author.name}</Heading>
         </VStack>
       )}
