@@ -1,18 +1,10 @@
 import { useState, useEffect } from "react";
-import {
-  Box,
-  Text,
-  Input,
-  Image,
-  Button,
-  VStack,
-  HStack,
-  useToast,
-} from "@chakra-ui/react";
+import { Box, Input, Button, VStack, useToast } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 
 import useUserData from "../useUserData";
 import { books } from "../feathers";
+import BooksList from "../booksList.component";
 
 export default function BooksPage() {
   const user = useUserData();
@@ -62,24 +54,7 @@ export default function BooksPage() {
           </VStack>
         </form>
       )}
-      <VStack spacing={4} p={8}>
-        {booksData.map((book) => (
-          <HStack textAlign="left" key={book._id} w="100%">
-            <Image
-              boxSize={16}
-              objectFit="contain"
-              src={book.pictureLink}
-              m="auto"
-            />
-            <Box w="100%">
-              <Text fontSize="lg" fontWeight="bold">
-                {book.title}
-              </Text>
-              <Text fontSize="md">{book.author.name}</Text>
-            </Box>
-          </HStack>
-        ))}
-      </VStack>
+      <BooksList books={booksData} />
     </Box>
   );
 }
