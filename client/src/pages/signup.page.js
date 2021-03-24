@@ -1,17 +1,24 @@
 import { VStack, Input, Button, useToast } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 import { users } from "../feathers";
 
 export default function SignUpPage() {
   const { register, handleSubmit } = useForm();
   const toast = useToast();
+  const history = useHistory();
 
   const onSubmit = (values) =>
     users
       .create(values)
-      .then(() =>
-        window.location = '/'
-      )
+      .then(() => {
+        history.push("/login");
+        toast({
+          status: "success",
+          title: "Sign up successful",
+          description: "You may now log in.",
+        });
+      })
       .catch(({ errors }) =>
         toast({
           status: "error",

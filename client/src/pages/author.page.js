@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { VStack, Image, Heading } from "@chakra-ui/react";
 
-import { authors } from "../feathers";
+import { authors, books } from "../feathers";
+import BooksList from '../booksList.component';
 
 export default function AuthorPage() {
   const [author, setAuthor] = useState(null);
+  const [booksData, setBooksData] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
@@ -21,6 +23,9 @@ export default function AuthorPage() {
           <Heading size="md">{author.name}</Heading>
         </VStack>
       )}
+    {books && (
+      <BooksList books={booksData} />
+    )}
     </>
   );
 }
