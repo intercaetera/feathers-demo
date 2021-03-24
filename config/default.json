@@ -1,0 +1,28 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "authentication": {
+    "entity": "user",
+    "service": "users",
+    "secret": "8KdxaSaIu6ven03f33Aupxacg7I=",
+    "authStrategies": [
+      "jwt",
+      "local"
+    ],
+    "jwtOptions": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "usernameField": "login",
+      "passwordField": "password"
+    }
+  },
+  "nedb": "../data"
+}
