@@ -16,8 +16,8 @@ const passwordValidator = values => {
 module.exports = {
   before: {
     all: [],
-    find: [authenticate('jwt')],
-    get: [authenticate('jwt')],
+    find: [],
+    get: [],
     create: [validate(passwordValidator), hashPassword('password')],
     update: [hashPassword('password'), authenticate('jwt')],
     patch: [hashPassword('password'), authenticate('jwt')],
