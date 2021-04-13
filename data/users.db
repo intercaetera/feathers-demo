@@ -1,4 +1,3 @@
-{"login":"test","email":"test@example.com","password":"$2a$10$A5gZ5ZheVOcPRtB9uqhF0.8hvJOJPkknHWeHqDuEmv.SHLvOqAiAG","confirmPassword":"asd","_id":"Fin8gL3xoMCr1QGN"}
-{"login":"intercaetera","email":"author@intercaetera.com","password":"$2a$10$YNo1IdJZ/G7P216ITuZ2CeyX3YC./xU9F5shqQ0ip51ji8puVFQny","confirmPassword":"test","_id":"L2lQV05YSgytc1Uw"}
 {"login":"bob","email":"bob@example.com","password":"$2a$10$Br6DMtBCHRYz5G9.zpUUmu1I8gCHJWE/68IfwYSUy4t/.7qCLoX.q","confirmPassword":"a","_id":"bXuqXLbSjwwJUedt"}
+{"login":"intercaetera","email":"author@intercaetera.com","password":"$2a$10$FKRchRGz9G0b.HNir2SGjObBLZ36DS8nMCXaT424apWgugjIa5Em6","confirmPassword":"test123","_id":"wnsywPsREztNu9w0"}
 {"$$indexCreated":{"fieldName":"email","unique":true,"sparse":false}}

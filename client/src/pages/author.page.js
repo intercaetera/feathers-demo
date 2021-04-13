@@ -23,7 +23,7 @@ export default function AuthorPage() {
           <Heading size="md">{author.name}</Heading>
         </VStack>
       )}
-    {books && (
+    {booksData && (
       <BooksList books={booksData} />
     )}
     </>
