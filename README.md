@@ -1,6 +1,6 @@
 # feathers-demo
 
-> 
+> Presentation demo. 
 
 ## About
 
