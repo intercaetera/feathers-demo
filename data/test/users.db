@@ -1,1 +1,2 @@
+{"login":"bob","email":"bob@example.com","password":"$2a$10$vqs.KTQfHepB/wz99y4t3O1/g6e3idCdteT3QSujMAo1MtVkhZrfO","confirmPassword":"secret","_id":"1aOJoZv1u89vTl2A"}
 {"$$indexCreated":{"fieldName":"email","unique":true,"sparse":false}}
