@@ -24,13 +24,11 @@ describe('\'books\' service', () => {
   });
 
   it('should join author information when retrieved', async () => {
-    const book = (
-      await books.find({
-        query: {
-          title: 'The Picture of Dorian Gray',
-        },
-      })
-    )[0];
+    const book = (await books.find({
+      query: {
+        title: 'The Picture of Dorian Gray',
+      }
+    }))[0];
 
     expect(book.author).toBeTruthy();
     expect(book.author.name).toBeTruthy();
@@ -39,12 +37,27 @@ describe('\'books\' service', () => {
   it('should create author if author does not exist', async () => {
     const book = await books.create({
       title: 'A Canticle For Leibowitz',
-      author: 'Walter M. Miller, Jr.',
+      author: 'Walter M. Miller, Jr.'
     });
 
     expect(book.author).toBeTruthy();
     expect(book.author._id).toBeTruthy();
     expect(book.author.name).toBeTruthy();
+  });
+
+  it('should not create author if specified author exists', async () => {
+    await books.create({
+      title: 'The Happy Prince',
+      author: 'Oscar Wilde',
+    });
+
+    const foundAuthors = await authors.find({
+      query: {
+        name: 'Oscar Wilde'
+      }
+    });
+
+    expect(foundAuthors.length).toBe(1);
   });
 });
 

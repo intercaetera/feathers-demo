@@ -12,12 +12,7 @@ export default function AuthorPage() {
 
   useEffect(() => {
     authors.get(id).then(setAuthor);
-    books
-      .find({
-        query: {
-          author: id,
-        },
-      })
+    books.find({ query: { author: id, } })
       .then(setBooksData);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 

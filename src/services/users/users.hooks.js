@@ -1,9 +1,6 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
 const { validate, disallow } = require('feathers-hooks-common');
-const {
-  hashPassword,
-  protect,
-} = require('@feathersjs/authentication-local').hooks;
+const { hashPassword, protect } = require('@feathersjs/authentication-local').hooks;
 
 const passwordValidator = values => {
   if (values.password !== values.confirmPassword) {
